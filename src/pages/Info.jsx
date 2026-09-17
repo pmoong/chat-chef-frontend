@@ -29,8 +29,23 @@ const Info = ({ sendIngredientList }) => {
 
   const handleNext = () => {
     console.log("chat페이지로 이동");
-    sendIngredientList(ingredientList);
-    navigate("/chat");
+    // 입력값이 있는 배열
+    const filterDataList = ingredientList.filter(
+      (item) => item.value.trim() !== "",
+    );
+    console.log("🚀filterDataList:", filterDataList);
+    if (filterDataList.length) {
+      // 재료 입력값이 있는 경우
+      sendIngredientList(ingredientList);
+      navigate("/chat");
+      // history("/chat");
+      return;
+    }
+
+    // 재료 입력값이 없는 경우
+    alert("재료를 최소 1개이상 입력해주세요");
+    // sendIngredientList(ingredientList);
+    // navigate("/chat");
   };
 
   const handleChange = (data) => {
