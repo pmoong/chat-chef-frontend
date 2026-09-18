@@ -13,7 +13,7 @@ const Info = ({ sendIngredientList }) => {
   const [ingredientList, setIngredientList] = useState([]); // 사용자가 입력할 재료 목록
 
   const addIngredient = () => {
-    console.log("재료 추가하기");
+    // console.log("재료 추가하기");
 
     const id = Date.now();
 
@@ -28,12 +28,12 @@ const Info = ({ sendIngredientList }) => {
   };
 
   const handleNext = () => {
-    console.log("chat페이지로 이동");
+    // console.log("chat페이지로 이동");
     // 입력값이 있는 배열
     const filterDataList = ingredientList.filter(
       (item) => item.value.trim() !== "",
     );
-    console.log("🚀filterDataList:", filterDataList);
+    // console.log("🚀filterDataList:", filterDataList);
     if (filterDataList.length) {
       // 재료 입력값이 있는 경우
       sendIngredientList(ingredientList);
@@ -49,7 +49,7 @@ const Info = ({ sendIngredientList }) => {
   };
 
   const handleChange = (data) => {
-    console.log("data: ", data);
+    // console.log("data: ", data);
     const changeList = ingredientList.map((ingredient) =>
       ingredient.id === data.id ? data : ingredient,
     );
@@ -63,7 +63,7 @@ const Info = ({ sendIngredientList }) => {
   };
 
   const handleRemove = (selectedId) => {
-    console.log("selectedId: ", selectedId);
+    // console.log("selectedId: ", selectedId);
     const filterIngredientList = ingredientList.filter(
       (ingredient) => ingredient.id !== selectedId,
     );
@@ -73,7 +73,7 @@ const Info = ({ sendIngredientList }) => {
 
   // state 변경 일어나면 실행
   useEffect(() => {
-    console.log("ingredientList", ingredientList);
+    // console.log("ingredientList", ingredientList);
   }, [ingredientList]);
 
   // view
