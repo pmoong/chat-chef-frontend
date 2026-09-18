@@ -110,6 +110,7 @@ const Chat = ({ ingredientList }) => {
   };
   useEffect(() => {
     sendInfo(ingredientList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // view
